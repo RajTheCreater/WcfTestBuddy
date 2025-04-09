@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- https://go.microsoft.com/fwlink/?LinkID=208121. -->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\inetpub\wwwroot\WcfServiceApp</_PublishTargetUrl>
+    <History>True|2025-04-09T05:16:36.1073990Z||;True|2025-04-09T10:46:27.0031262+05:30||;True|2025-04-09T10:45:59.1863205+05:30||;True|2025-04-09T10:45:51.5435085+05:30||;True|2025-04-09T10:34:21.7792206+05:30||;False|2025-04-09T10:33:37.1111118+05:30||;False|2025-04-09T10:33:24.2206815+05:30||;False|2025-04-09T10:33:10.0730187+05:30||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/WcfServiceApp.dll">
+      <publishTime>04/09/2025 10:33:37</publishTime>
+    </File>
+    <File Include="bin/WcfServiceApp.pdb">
+      <publishTime>04/09/2025 10:33:37</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>04/09/2025 10:46:35</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>04/09/2025 10:29:16</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/09/2025 10:46:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

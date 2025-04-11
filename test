@@ -1,3 +1,5 @@
+
+
 openssl genrsa -out private.key 2048
 
 openssl req -new -key private.key -out certificate.csr
@@ -36,3 +38,11 @@ builder.WebHost.ConfigureKestrel(options =>
 
 var app = builder.Build();
 app.Run();
+
+
+    var certificate = new X509Certificate2("path/to/certificate.pfx", "YourPassword");
+
+        // Assign the callback
+        ServicePointManager.ServerCertificateValidationCallback = ValidateCertificate;
+
+

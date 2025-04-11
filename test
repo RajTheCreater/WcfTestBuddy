@@ -46,3 +46,13 @@ app.Run();
         ServicePointManager.ServerCertificateValidationCallback = ValidateCertificate;
 
 
+  public static class Extensions
+  {
+      private static bool ValidateCertificate(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+      { 
+          Console.WriteLine($"Certificate Subject: {cert.Subject}");
+          Console.WriteLine($"SSL Policy Errors: {sslPolicyErrors}");
+           
+          return true; 
+      }
+  }

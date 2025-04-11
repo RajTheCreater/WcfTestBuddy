@@ -1,0 +1,38 @@
+openssl genrsa -out private.key 2048
+
+openssl req -new -key private.key -out certificate.csr
+
+openssl x509 -req -days 365 -in certificate.csr -signkey private.key -out certificate.crt
+
+openssl pkcs12 -export -out certificate.pfx -inkey private.key -in certificate.crt
+
+
+{
+  "Kestrel": {
+    "Endpoints": {
+      "Https": {
+        "Url": "https://localhost:5001",
+        "Certificate": {
+          "Path": "path/to/certificate.pfx",
+          "Password": "YourPassword"
+        }
+      }
+    }
+  }
+}
+
+
+using Microsoft.AspNetCore.Hosting;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ConfigureHttpsDefaults(httpsOptions =>
+    {
+        httpsOptions.ServerCertificate = new System.Security.Cryptography.X509Certificates.X509Certificate2("path/to/certificate.pfx", "YourPassword");
+    });
+});
+
+var app = builder.Build();
+app.Run();
